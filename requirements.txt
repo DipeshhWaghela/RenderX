@@ -5,3 +5,4 @@ torchvision==0.17.1
 pillow==10.3.0
 accelerate==0.29.3
 transformers==4.39.3
+huggingface-hub==0.22.2  
