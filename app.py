@@ -36,6 +36,7 @@ if uploaded_file and prompt:
     
     if st.button("Transform Image"):
         with st.spinner("Generating your image..."):
+            device = "cuda" if torch.cuda.is_available() else "cpu"
             pipe = StableDiffusionImg2ImgPipeline.from_pretrained(
                 "runwayml/stable-diffusion-v1-5",
                 torch_dtype=torch.float16,
