@@ -5,8 +5,8 @@ from PIL import Image
 import io
 
 import torch
-print(torch.cuda.is_available())  # true if gpu 
-print(torch.version.cuda)  #CUDA version
+print(torch.cuda.is_available())  # Should be True for GPU solution
+print(torch.version.cuda)  # Shows your CUDA version
 
 # Set up the app
 st.title("Product Image Transformer")
@@ -36,7 +36,6 @@ if uploaded_file and prompt:
     
     if st.button("Transform Image"):
         with st.spinner("Generating your image..."):
-            device = "cuda" if torch.cuda.is_available() else "cpu"
             pipe = StableDiffusionImg2ImgPipeline.from_pretrained(
                 "runwayml/stable-diffusion-v1-5",
                 torch_dtype=torch.float16,
@@ -47,7 +46,7 @@ if uploaded_file and prompt:
             images = pipe(
                 prompt=prompt,
                 image=init_image,
-                strength=0.75,  
+                strength=0.75,  # How much to transform the original
                 guidance_scale=7.5
             ).images
             
