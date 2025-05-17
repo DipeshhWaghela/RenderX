@@ -3,6 +3,8 @@ from diffusers import StableDiffusionImg2ImgPipeline
 import torch
 from PIL import Image
 import io
+import os
+
 
 import torch
 print(torch.cuda.is_available())  # Should be True for GPU solution
@@ -39,7 +41,8 @@ if uploaded_file and prompt:
             pipe = StableDiffusionImg2ImgPipeline.from_pretrained(
                 "runwayml/stable-diffusion-v1-5",
                 torch_dtype=torch.float16,
-                use_auth_token=st.secrets["HF_TOKEN"]  
+                #use_auth_token=st.secrets["HF_TOKEN"]  
+                use_auth_token = os.environ.get("HF_TOKEN")
             ).to("cuda")
             
             # Generate image
