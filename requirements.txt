@@ -1,0 +1,7 @@
+streamlit==1.33.0
+diffusers==0.27.2
+torch==2.2.1
+torchvision==0.17.1
+pillow==10.3.0
+accelerate==0.29.3
+transformers==4.39.3
