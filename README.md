@@ -10,7 +10,6 @@ Local setup:
 2. Get a Hugging face api_key from the platform and make a services.toml, and add the 
 key to it. 
 2. In the terminal mention streamlit run app.py, to run it as a local. 
-3.  
-It has returned that the local system is configured with GPU, as we get True. 
-4.  
-Transform image – used for generation of image. 
+3. It has returned that the local system is configured with GPU, as we get True.
+4. Transform image – used for generation of image. 
+
